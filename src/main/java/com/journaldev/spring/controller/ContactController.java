@@ -19,8 +19,8 @@ public class ContactController {
 	
 	@Autowired(required=true)
 	@Qualifier(value="contactService")
-	public void setContactService(ContactService ps){
-		this.contactService = ps;
+	public void setContactService(ContactService contactService){
+		this.contactService = contactService;
 	}
 	
 	@RequestMapping(value="/contacts", method=RequestMethod.GET)

@@ -19,8 +19,8 @@ public class ItemTypeController {
 	
 	@Autowired(required=true)
 	@Qualifier(value="itemTypeService")
-	public void setItemTypeService(ItemTypeService ps){
-		this.itemTypeService = ps;
+	public void setItemTypeService(ItemTypeService itemTypeService){
+		this.itemTypeService = itemTypeService;
 	}
 	
 	@RequestMapping(value="/itemTypes", method=RequestMethod.GET)

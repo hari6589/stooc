@@ -29,7 +29,7 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/ims" />
+			value="jdbc:mysql://localhost:3306/stooc" />
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="root" />
 	</beans:bean>
@@ -40,8 +40,8 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.journaldev.spring.model.Person</beans:value>
 				<beans:value>com.journaldev.spring.model.Contact</beans:value>
+				<beans:value>com.journaldev.spring.model.User</beans:value>
 				<beans:value>com.journaldev.spring.model.Item</beans:value>
 				<beans:value>com.journaldev.spring.model.ItemType</beans:value>
 				<beans:value>com.journaldev.spring.model.Product</beans:value>
@@ -56,10 +56,10 @@
 		</beans:property>
 	</beans:bean>
 	
-	<beans:bean id="personDAO" class="com.journaldev.spring.dao.PersonDAOImpl">
+	<beans:bean id="contactDAO" class="com.journaldev.spring.dao.ContactDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	<beans:bean id="contactDAO" class="com.journaldev.spring.dao.ContactDAOImpl">
+	<beans:bean id="userDAO" class="com.journaldev.spring.dao.UserDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
 	<beans:bean id="itemDAO" class="com.journaldev.spring.dao.ItemDAOImpl">
@@ -70,13 +70,13 @@
 	</beans:bean>
 	<beans:bean id="productDAO" class="com.journaldev.spring.dao.ProductDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
+	</beans:bean>	
 	
-	<beans:bean id="personService" class="com.journaldev.spring.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
-	</beans:bean>
 	<beans:bean id="contactService" class="com.journaldev.spring.service.ContactServiceImpl">
 		<beans:property name="contactDAO" ref="contactDAO"></beans:property>
+	</beans:bean>
+	<beans:bean id="userService" class="com.journaldev.spring.service.UserServiceImpl">
+		<beans:property name="userDAO" ref="userDAO"></beans:property>
 	</beans:bean>
 	<beans:bean id="itemService" class="com.journaldev.spring.service.ItemServiceImpl">
 		<beans:property name="itemDAO" ref="itemDAO"></beans:property>

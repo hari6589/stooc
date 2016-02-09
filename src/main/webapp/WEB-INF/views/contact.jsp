@@ -56,16 +56,6 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="type">
-				<spring:message text="Type"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="type" />
-		</td>
-	</tr>
-	<tr>
-		<td>
 			<form:label path="address">
 				<spring:message text="Address"/>
 			</form:label>
@@ -116,12 +106,12 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="remark">
-				<spring:message text="Remark"/>
+			<form:label path="description">
+				<spring:message text="Description"/>
 			</form:label>
 		</td>
 		<td>
-			<form:input path="remark" />
+			<form:input path="description" />
 		</td>
 	</tr>
 	<tr>
@@ -146,13 +136,12 @@
 		<th width="80">Contact ID</th>
 		<th width="120">Contact Name</th>
 		<th width="120">Company</th>
-		<th width="120">Type</th>
 		<th width="120">Address</th>
 		<th width="120">City</th>
 		<th width="120">Country</th>
 		<th width="120">Phone</th>
 		<th width="120">EMail</th>
-		<th width="120">Remark</th>
+		<th width="120">Description</th>
 		<th width="60">Edit</th>
 		<th width="60">Delete</th>
 	</tr>
@@ -161,13 +150,12 @@
 			<td>${contact.id}</td>
 			<td>${contact.name}</td>
 			<td>${contact.company}</td>
-			<td>${contact.type}</td>
 			<td>${contact.address}</td>
 			<td>${contact.city}</td>
 			<td>${contact.country}</td>
 			<td>${contact.phone}</td>
 			<td>${contact.email}</td>
-			<td>${contact.remark}</td>
+			<td>${contact.description}</td>
 			<td><a href="<c:url value='/contact/edit/${contact.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/contact/remove/${contact.id}' />" >Delete</a></td>
 		</tr>
