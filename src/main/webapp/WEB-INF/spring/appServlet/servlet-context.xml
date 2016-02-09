@@ -43,7 +43,7 @@
 				<beans:value>com.journaldev.spring.model.Contact</beans:value>
 				<beans:value>com.journaldev.spring.model.User</beans:value>
 				<beans:value>com.journaldev.spring.model.Item</beans:value>
-				<beans:value>com.journaldev.spring.model.ItemType</beans:value>
+				<beans:value>com.journaldev.spring.model.ItemCategory</beans:value>
 				<beans:value>com.journaldev.spring.model.Product</beans:value>
 			</beans:list>
 		</beans:property>
@@ -65,7 +65,7 @@
 	<beans:bean id="itemDAO" class="com.journaldev.spring.dao.ItemDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	<beans:bean id="itemTypeDAO" class="com.journaldev.spring.dao.ItemTypeDAOImpl">
+	<beans:bean id="itemCategoryDAO" class="com.journaldev.spring.dao.ItemCategoryDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
 	<beans:bean id="productDAO" class="com.journaldev.spring.dao.ProductDAOImpl">
@@ -81,8 +81,8 @@
 	<beans:bean id="itemService" class="com.journaldev.spring.service.ItemServiceImpl">
 		<beans:property name="itemDAO" ref="itemDAO"></beans:property>
 	</beans:bean>
-	<beans:bean id="itemTypeService" class="com.journaldev.spring.service.ItemTypeServiceImpl">
-		<beans:property name="itemTypeDAO" ref="itemTypeDAO"></beans:property>
+	<beans:bean id="itemCategoryService" class="com.journaldev.spring.service.ItemCategoryServiceImpl">
+		<beans:property name="itemCategoryDAO" ref="itemCategoryDAO"></beans:property>
 	</beans:bean>
 	<beans:bean id="productService" class="com.journaldev.spring.service.ProductServiceImpl">
 		<beans:property name="productDAO" ref="productDAO"></beans:property>

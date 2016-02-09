@@ -15,7 +15,6 @@ public class Item {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int id;
 	public String name;
-	public String type;
 	public String image;
 	public String model;
 	public String description;
@@ -31,12 +30,6 @@ public class Item {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
 	}
 	public String getImage() {
 		return image;
@@ -59,8 +52,7 @@ public class Item {
 	
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", type=" + type
-				+ ", image=" + image + ", model="
+		return "Item [id=" + id + ", name=" + name + ", image=" + image + ", model="
 				+ model + ", description=" + description + "]";
 	}
 	

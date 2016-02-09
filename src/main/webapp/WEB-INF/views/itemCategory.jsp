@@ -4,7 +4,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>ItemType Page</title>
+	<title>ItemCategory Page</title>
 	<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
 		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -14,14 +14,14 @@
 </head>
 <body>
 <h1>
-	Add a ItemType
+	Add a ItemCategory
 </h1>
 
-<c:url var="addAction" value="/itemType/add" ></c:url>
+<c:url var="addAction" value="/itemCategory/add" ></c:url>
 
-<form:form action="${addAction}" commandName="itemType">
+<form:form action="${addAction}" commandName="itemCategory">
 <table>
-	<c:if test="${!empty itemType.name}">
+	<c:if test="${!empty itemCategory.name}">
 	<tr>
 		<td>
 			<form:label path="id">
@@ -56,36 +56,36 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<c:if test="${!empty itemType.name}">
+			<c:if test="${!empty itemCategory.name}">
 				<input type="submit"
-					value="<spring:message text="Edit ItemType"/>" />
+					value="<spring:message text="Edit ItemCategory"/>" />
 			</c:if>
-			<c:if test="${empty itemType.name}">
+			<c:if test="${empty itemCategory.name}">
 				<input type="submit"
-					value="<spring:message text="Add ItemType"/>" />
+					value="<spring:message text="Add ItemCategory"/>" />
 			</c:if>
 		</td>
 	</tr>
 </table>	
 </form:form>
 <br>
-<h3>ItemTypes List</h3>
-<c:if test="${!empty listItemTypes}">
+<h3>ItemCategory List</h3>
+<c:if test="${!empty listItemCategories}">
 	<table class="tg">
 	<tr>
-		<th width="80">ItemType ID</th>
-		<th width="120">ItemType Name</th>
+		<th width="80">ItemCategory ID</th>
+		<th width="120">ItemCategory Name</th>
 		<th width="120">Description</th>
 		<th width="60">Edit</th>
 		<th width="60">Delete</th>
 	</tr>
-	<c:forEach items="${listItemTypes}" var="itemType">
+	<c:forEach items="${listItemCategories}" var="itemCategory">
 		<tr>
-			<td>${itemType.id}</td>
-			<td>${itemType.name}</td>
-			<td>${itemType.description}</td>
-			<td><a href="<c:url value='/itemType/edit/${itemType.id}' />" >Edit</a></td>
-			<td><a href="<c:url value='/itemType/remove/${itemType.id}' />" >Delete</a></td>
+			<td>${itemCategory.id}</td>
+			<td>${itemCategory.name}</td>
+			<td>${itemCategory.description}</td>
+			<td><a href="<c:url value='/itemCategory/edit/${itemCategory.id}' />" >Edit</a></td>
+			<td><a href="<c:url value='/itemCategory/remove/${itemCategory.id}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 	</table>

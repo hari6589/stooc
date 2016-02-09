@@ -47,16 +47,6 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="type">
-				<spring:message text="Type"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="type" />
-		</td>
-	</tr>
-	<tr>
-		<td>
 			<form:label path="image">
 				<spring:message text="Image"/>
 			</form:label>
@@ -106,7 +96,6 @@
 	<tr>
 		<th width="80">Item ID</th>
 		<th width="120">Item Name</th>
-		<th width="120">Type</th>
 		<th width="120">Image</th>
 		<th width="120">Model</th>
 		<th width="120">Description</th>
@@ -117,7 +106,6 @@
 		<tr>
 			<td>${item.id}</td>
 			<td>${item.name}</td>
-			<td>${item.type}</td>
 			<td>${item.image}</td>
 			<td>${item.model}</td>
 			<td>${item.description}</td>
