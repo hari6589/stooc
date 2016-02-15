@@ -29,11 +29,11 @@ item_id int(5));
 
 create table transaction_type (id int(5) not null primary key auto_increment, name int(5));
 
-create table stock_status (id int(5) not null primary key auto_increment, name int(5));
+create table transaction_status (id int(5) not null primary key auto_increment, name int(5));
 
-create table stock (id int(5) not null primary key auto_increment, transaction_type_id int(1),
+create table transaction (id int(5) not null primary key auto_increment, transaction_type_id int(1),
 item_id int(5), purchase_date datetime, supplier varchar(25), status int(1), description varchar(25));
 
 create table orders (id int(5) not null primary key auto_increment, name int(5), contact_id int(5), order_date datetime);
 
-create table order_item (id int(5) not null primary key auto_increment, order_id int(5), stock_id int(5));
+create table order_item (id int(5) not null primary key auto_increment, order_id int(5), transaction_id int(5));
