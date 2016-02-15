@@ -18,8 +18,6 @@ public class Product {
 	public int id;
 	public String name;
 	public String description;
-	public Date due;
-	public String remark;
 	
 	public int getId() {
 		return id;
@@ -39,23 +37,11 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDue() {
-		return due;
-	}
-	public void setDue(Date due) {
-		this.due = due;
-	}
-	public String getRemark() {
-		return remark;
-	}
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
 	
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", description="
-				+ description + ", due=" + due + ", remark=" + remark + "]";
+				+ description + "]";
 	}
 	
 }

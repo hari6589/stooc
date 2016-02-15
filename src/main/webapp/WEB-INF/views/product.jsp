@@ -55,26 +55,6 @@
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<form:label path="due">
-				<spring:message text="Due"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="due" value="2016-01-09 14:51:23" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<form:label path="remark">
-				<spring:message text="Remark"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="remark" />
-		</td>
-	</tr>
-	<tr>
 		<td colspan="2">
 			<c:if test="${!empty product.name}">
 				<input type="submit"
@@ -96,8 +76,6 @@
 		<th width="80">Product ID</th>
 		<th width="120">Product Name</th>
 		<th width="120">Description</th>
-		<th width="120">Due Date</th>
-		<th width="120">Remark</th>
 		<th width="60">Edit</th>
 		<th width="60">Delete</th>
 	</tr>
@@ -106,8 +84,6 @@
 			<td>${product.id}</td>
 			<td>${product.name}</td>
 			<td>${product.description}</td>
-			<td>${product.due}</td>
-			<td>${product.remark}</td>
 			<td><a href="<c:url value='/product/edit/${product.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/product/remove/${product.id}' />" >Delete</a></td>
 		</tr>
