@@ -45,6 +45,7 @@
 				<beans:value>com.journaldev.spring.model.Item</beans:value>
 				<beans:value>com.journaldev.spring.model.ItemCategory</beans:value>
 				<beans:value>com.journaldev.spring.model.Product</beans:value>
+				<beans:value>com.journaldev.spring.model.Transaction</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -71,6 +72,9 @@
 	<beans:bean id="productDAO" class="com.journaldev.spring.dao.ProductDAOImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>	
+	<beans:bean id="transactionDAO" class="com.journaldev.spring.dao.TransactionDAOImpl">
+		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
 	
 	<beans:bean id="contactService" class="com.journaldev.spring.service.ContactServiceImpl">
 		<beans:property name="contactDAO" ref="contactDAO"></beans:property>
@@ -87,6 +91,9 @@
 	<beans:bean id="productService" class="com.journaldev.spring.service.ProductServiceImpl">
 		<beans:property name="productDAO" ref="productDAO"></beans:property>
 	</beans:bean>
+	<beans:bean id="transactionService" class="com.journaldev.spring.service.TransactionServiceImpl">
+		<beans:property name="transactionDAO" ref="transactionDAO"></beans:property>
+	</beans:bean>
 	
 	<context:component-scan base-package="com.journaldev.spring" />
 	
@@ -95,6 +102,5 @@
 	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-
 
 </beans:beans>
